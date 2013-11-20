@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://buttonsback/content/style.css" type="text/css" ?>
+
+<!DOCTYPE overlay SYSTEM "chrome://browser/locale/browser.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<toolbaritem id="urlbar-container">
+		<toolbarbutton
+			id="reload-button"
+			class="toolbarbutton-1 chromeclass-toolbar-additional"
+			label="Reload"
+			command="Browser:ReloadOrDuplicate"
+			onclick="checkForMiddleClick(this, event);"
+			oncommand="BrowserReloadOrDuplicate(event);"
+			tooltiptext="&reloadButton.tooltip;"
+			insertafter="forward-button" />
+		<toolbarbutton
+			id="stop-button"
+			class="toolbarbutton-1 chromeclass-toolbar-additional"
+			label="Stop"
+			command="Browser:Stop"
+			oncommand="BrowserStop();"
+			tooltiptext="&stopButton.tooltip;"
+			insertafter="reload-button" />
+	</toolbaritem>
+
+	<script type="application/javascript"><![CDATA[
+		addEventListener("load", function buttonsBackOnLoad() {
+			removeEventListener("load", buttonsBackOnLoad);
+
+			let urlbarContainer = document.getElementById("urlbar-container");
+			let reloadButton = document.getElementById("reload-button");
+			let stopButton = document.getElementById("stop-button");
+			let observerTarget = stopButton.nextElementSibling;
+			let homeButton = document.getElementById("home-button");
+
+			urlbarContainer.removeAttribute("forwarddisabled");
+			observerTarget.remove();
+			urlbarContainer.insertBefore(homeButton, stopButton.nextElementSibling);
+
+			CombinedStopReload.reload = reloadButton;
+			CombinedStopReload.stop = stopButton;
+			stopButton.addEventListener("click", CombinedStopReload, false);
+		});
+	]]></script>
+
+</overlay>

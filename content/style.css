@@ -1,0 +1,27 @@
+#back-button {
+	-moz-image-region: rect(0px, 54px, 18px, 36px);
+}
+#forward-button {
+	transform: none !important;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+	transition: none !important;
+}
+#reload-button,
+#stop-button {
+	list-style-image: url("chrome://browser/skin/Toolbar.png");
+}
+#reload-button {
+	-moz-image-region: rect(0px, 90px, 18px, 72px);
+}
+#stop-button {
+	-moz-image-region: rect(0px, 108px, 18px, 90px);
+}
+#reload-button:not([displaystop]) + #stop-button,
+#reload-button[displaystop] {
+	visibility: collapse;
+}
+#urlbar-reload-button,
+#urlbar-stop-button {
+	visibility: collapse;
+}

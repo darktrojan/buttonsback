@@ -1,0 +1,2 @@
+content buttonsback content/
+overlay chrome://browser/content/browser.xul chrome://buttonsback/content/overlay.xul

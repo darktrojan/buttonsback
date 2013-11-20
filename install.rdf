@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>buttonsback@darktrojan.net</em:id>
+		<em:version>1</em:version>
+		<em:type>2</em:type>
+		<em:name>Buttons Back</em:name>
+		<em:description>Put my reload and home buttons back where they belong!</em:description>
+		<em:creator>Geoff Lankow</em:creator>
+
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>28.0a1</em:minVersion>
+				<em:maxVersion>28.0a1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+
+</RDF>

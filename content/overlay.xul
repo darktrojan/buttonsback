@@ -36,7 +36,11 @@
 
 			urlbarContainer.removeAttribute("forwarddisabled");
 			observerTarget.remove();
-			urlbarContainer.insertBefore(homeButton, stopButton.nextElementSibling);
+
+			// The home button might be missing if it wasn't on the toolbar at startup.
+			if (homeButton) {
+				urlbarContainer.insertBefore(homeButton, stopButton.nextElementSibling);
+			}
 
 			CombinedStopReload.reload = reloadButton;
 			CombinedStopReload.stop = stopButton;

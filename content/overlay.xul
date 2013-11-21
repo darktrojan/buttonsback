@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://buttonsback/content/style.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://buttonsback/skin/style.css" type="text/css" ?>
 
 <!DOCTYPE overlay SYSTEM "chrome://browser/locale/browser.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -45,6 +45,20 @@
 			CombinedStopReload.reload = reloadButton;
 			CombinedStopReload.stop = stopButton;
 			stopButton.addEventListener("click", CombinedStopReload, false);
+
+			for (let [, ss] of Iterator(document.styleSheets)) {
+				if (ss.href == "chrome://browser/skin/browser.css") {
+					for (let [, r] of Iterator(ss.cssRules)) {
+						if ("selectorText" in r && r.selectorText.endsWith('#urlbar')) {
+							r.style.MozBorderStart =
+								r.style.MozBorderStartColor =
+								r.style.MozBorderStartStyle =
+								r.style.MozBorderStartWidth = "";
+						}
+					}
+					break;
+				}
+			}
 		});
 	]]></script>
 

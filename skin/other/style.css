@@ -3,6 +3,7 @@
 	opacity: 1 !important;
 	pointer-events: auto !important;
 	transition: none !important;
+	padding-right: 2px !important;
 }
 #reload-button,
 #stop-button {
@@ -21,6 +22,13 @@
 #reload-button > .toolbarbutton-icon,
 #stop-button > .toolbarbutton-icon {
 	padding: 2px 6px !important;
+}
+#reload-button:not(:hover) > .toolbarbutton-icon,
+#stop-button:not(:hover) > .toolbarbutton-icon,
+#home-button:not(:hover) > .toolbarbutton-icon {
+	border-color: transparent !important;
+	background-image: none !important;
+	box-shadow: none !important;
 }
 #urlbar {
 	margin-left: 3px !important;

@@ -4,6 +4,7 @@
 	pointer-events: auto !important;
 	transition: none !important;
 	padding-right: 2px !important;
+	visibility: visible !important;
 }
 #reload-button,
 #stop-button {

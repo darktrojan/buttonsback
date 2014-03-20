@@ -1,4 +1,3 @@
 content buttonsback content/
-skin buttonsback skin skin/linux/ os=Linux
-skin buttonsback skin skin/other/ os!=Linux
+skin buttonsback skin skin/
 overlay chrome://browser/content/browser.xul chrome://buttonsback/content/overlay.xul

@@ -4,6 +4,7 @@
 	pointer-events: auto !important;
 	transition: none !important;
 	visibility: visible !important;
+	-moz-margin-start: -5px;
 }
 #reload-button,
 #stop-button {
@@ -29,6 +30,10 @@
 	border-color: transparent !important;
 	background-image: none !important;
 	box-shadow: none !important;
+}
+#urlbar-wrapper {
+	clip-path: none !important;
+	margin: 0 !important;
 }
 #urlbar {
 	margin-left: 3px !important;

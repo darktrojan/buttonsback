@@ -12,16 +12,14 @@
 			command="Browser:ReloadOrDuplicate"
 			onclick="checkForMiddleClick(this, event);"
 			oncommand="BrowserReloadOrDuplicate(event);"
-			tooltiptext="&reloadButton.tooltip;"
-			insertafter="forward-button" />
+			tooltiptext="&reloadButton.tooltip;" />
 		<toolbarbutton
 			id="stop-button"
 			class="toolbarbutton-1 chromeclass-toolbar-additional"
 			label="Stop"
 			command="Browser:Stop"
 			oncommand="BrowserStop();"
-			tooltiptext="&stopButton.tooltip;"
-			insertafter="reload-button" />
+			tooltiptext="&stopButton.tooltip;" />
 	</toolbaritem>
 
 	<script type="application/javascript"><![CDATA[
@@ -29,13 +27,17 @@
 			removeEventListener("load", buttonsBackOnLoad);
 
 			let urlbarContainer = document.getElementById("urlbar-container");
+			let backButton = document.getElementById("back-button");
+			let forwardButton = document.getElementById("forward-button");
 			let reloadButton = document.getElementById("reload-button");
 			let stopButton = document.getElementById("stop-button");
-			let observerTarget = stopButton.nextElementSibling;
 			let homeButton = document.getElementById("home-button");
 
 			urlbarContainer.removeAttribute("forwarddisabled");
-			observerTarget.remove();
+
+			urlbarContainer.insertBefore(forwardButton, backButton.nextElementSibling);
+			urlbarContainer.insertBefore(reloadButton, forwardButton.nextElementSibling);
+			urlbarContainer.insertBefore(stopButton, reloadButton.nextElementSibling);
 
 			// The home button might be missing if it wasn't on the toolbar at startup.
 			if (homeButton) {

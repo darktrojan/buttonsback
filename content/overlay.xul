@@ -48,6 +48,13 @@
 			CombinedStopReload.stop = stopButton;
 			stopButton.addEventListener("click", CombinedStopReload, false);
 
+			CombinedStopReload._oldInit = CombinedStopReload.init;
+			CombinedStopReload.init = function() {
+				CombinedStopReload._oldInit();
+				CombinedStopReload.reload = document.getElementById("reload-button");
+				CombinedStopReload.stop = document.getElementById("stop-button");
+			};
+
 			for (let [, ss] of Iterator(document.styleSheets)) {
 				if (ss.href == "chrome://browser/skin/browser.css") {
 					for (let [, r] of Iterator(ss.cssRules)) {

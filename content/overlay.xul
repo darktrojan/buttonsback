@@ -8,7 +8,7 @@
 		<toolbarbutton
 			id="reload-button"
 			class="toolbarbutton-1 chromeclass-toolbar-additional"
-			label="Reload"
+			label="&reloadCmd.label;"
 			command="Browser:ReloadOrDuplicate"
 			onclick="checkForMiddleClick(this, event);"
 			oncommand="BrowserReloadOrDuplicate(event);"
@@ -16,7 +16,7 @@
 		<toolbarbutton
 			id="stop-button"
 			class="toolbarbutton-1 chromeclass-toolbar-additional"
-			label="Stop"
+			label="&stopCmd.label;"
 			command="Browser:Stop"
 			oncommand="BrowserStop();"
 			tooltiptext="&stopButton.tooltip;" />

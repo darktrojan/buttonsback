@@ -5,10 +5,15 @@
 	transition: none !important;
 	visibility: visible !important;
 	-moz-margin-start: -5px;
+	-moz-border-start-style: none !important;
 }
 #reload-button,
 #stop-button {
 	list-style-image: url("chrome://browser/skin/Toolbar.png");
+}
+toolbar[brighttext] #reload-button,
+toolbar[brighttext] #stop-button {
+	list-style-image: url("chrome://browser/skin/Toolbar-inverted.png");
 }
 #reload-button {
 	-moz-image-region: rect(0px, 90px, 18px, 72px);

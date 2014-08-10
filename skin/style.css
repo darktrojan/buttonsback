@@ -5,7 +5,10 @@
 	transition: none !important;
 	visibility: visible !important;
 	-moz-margin-start: -5px;
+}
+#forward-button > .toolbarbutton-icon {
 	-moz-border-start-style: none !important;
+	border-radius: 0 2px 2px 0;
 }
 #reload-button,
 #stop-button {

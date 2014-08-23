@@ -3,7 +3,7 @@
 
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>buttonsback@darktrojan.net</em:id>
-		<em:version>6</em:version>
+		<em:version>7</em:version>
 		<em:type>2</em:type>
 		<em:name>Buttons Back</em:name>
 		<em:description>Put my reload and home buttons back where they belong!</em:description>

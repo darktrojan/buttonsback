@@ -5,6 +5,7 @@
 	transition: none !important;
 	visibility: visible !important;
 	-moz-margin-start: -5px;
+	-moz-padding-start: 0;
 }
 #forward-button > .toolbarbutton-icon {
 	-moz-border-start-style: none !important;

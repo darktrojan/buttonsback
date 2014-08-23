@@ -1,3 +1,5 @@
 content buttonsback content/
-skin buttonsback skin skin/
+skin buttonsback skin skin/linux/ os!=WINNT os!=Darwin
+skin buttonsback skin skin/osx/ os=Darwin
+skin buttonsback skin skin/windows/ os=WINNT
 overlay chrome://browser/content/browser.xul chrome://buttonsback/content/overlay.xul

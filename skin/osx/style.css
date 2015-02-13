@@ -37,6 +37,11 @@ toolbar[brighttext] #stop-button {
 #reload-button[displaystop] {
 	visibility: collapse;
 }
+#reload-button > .toolbarbutton-icon,
+#stop-button > .toolbarbutton-icon,
+#home-button > .toolbarbutton-icon {
+	margin: 0;
+}
 #reload-button:not(:hover) > .toolbarbutton-icon,
 #stop-button:not(:hover) > .toolbarbutton-icon,
 #home-button:not(:hover) > .toolbarbutton-icon {

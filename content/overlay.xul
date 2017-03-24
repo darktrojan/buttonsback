@@ -11,15 +11,13 @@
 			label="&reloadCmd.label;"
 			command="Browser:ReloadOrDuplicate"
 			onclick="checkForMiddleClick(this, event);"
-			oncommand="BrowserReloadOrDuplicate(event);"
-			tooltiptext="&reloadButton.tooltip;" />
+			oncommand="BrowserReloadOrDuplicate(event);" />
 		<toolbarbutton
 			id="stop-button"
 			class="toolbarbutton-1 chromeclass-toolbar-additional"
 			label="&stopCmd.label;"
 			command="Browser:Stop"
-			oncommand="BrowserStop();"
-			tooltiptext="&stopButton.tooltip;" />
+			oncommand="BrowserStop();" />
 	</toolbaritem>
 
 	<script type="application/javascript"><![CDATA[

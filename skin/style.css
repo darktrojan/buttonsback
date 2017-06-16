@@ -1,0 +1,32 @@
+#forward-button {
+	margin-inline-start: -5px !important;
+}
+#reload-button,
+#stop-button {
+	-moz-context-properties: fill;
+	fill: var(--toolbarbutton-icon-fill);
+	padding: 0 2px;
+	-moz-image-region: unset !important;
+}
+#reload-button {
+	list-style-image: url("chrome://browser/skin/reload.svg");
+	margin-inline-start: 0;
+	border: none;
+}
+#stop-button {
+	list-style-image: url("chrome://browser/skin/stop.svg");
+}
+#reload-button:not([displaystop]) + #stop-button,
+#reload-button[displaystop] {
+	visibility: collapse;
+}
+#urlbar-wrapper {
+	clip-path: none !important;
+	margin: 0 !important;
+}
+#urlbar {
+	margin-inline-start: 3px !important;
+	border-radius: 1px !important;
+	border-inline-start: 1px solid !important;
+	border-color: var(--urlbar-border-color) !important;
+}

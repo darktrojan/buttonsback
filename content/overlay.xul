@@ -4,22 +4,6 @@
 <!DOCTYPE overlay SYSTEM "chrome://browser/locale/browser.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<toolbaritem id="urlbar-container">
-		<toolbarbutton
-			id="reload-button"
-			class="toolbarbutton-1 chromeclass-toolbar-additional"
-			label="&reloadCmd.label;"
-			command="Browser:ReloadOrDuplicate"
-			onclick="checkForMiddleClick(this, event);"
-			oncommand="BrowserReloadOrDuplicate(event);" />
-		<toolbarbutton
-			id="stop-button"
-			class="toolbarbutton-1 chromeclass-toolbar-additional"
-			label="&stopCmd.label;"
-			command="Browser:Stop"
-			oncommand="BrowserStop();" />
-	</toolbaritem>
-
 	<script type="application/javascript"><![CDATA[
 		addEventListener("load", function buttonsBackOnLoad() {
 			removeEventListener("load", buttonsBackOnLoad);
@@ -31,6 +15,9 @@
 			let stopButton = document.getElementById("stop-button");
 			let homeButton = document.getElementById("home-button");
 
+			reloadButton.classList.add("toolbarbutton-1");
+			stopButton.classList.add("toolbarbutton-1");
+
 			urlbarContainer.removeAttribute("forwarddisabled");
 
 			urlbarContainer.insertBefore(forwardButton, backButton.nextElementSibling);
@@ -40,31 +27,6 @@
 			// The home button might be missing if it wasn't on the toolbar at startup.
 			if (homeButton) {
 				urlbarContainer.insertBefore(homeButton, stopButton.nextElementSibling);
-			}
-
-			CombinedStopReload.reload = reloadButton;
-			CombinedStopReload.stop = stopButton;
-			stopButton.addEventListener("click", CombinedStopReload, false);
-
-			CombinedStopReload._oldInit = CombinedStopReload.init;
-			CombinedStopReload.init = function() {
-				CombinedStopReload._oldInit();
-				CombinedStopReload.reload = document.getElementById("reload-button");
-				CombinedStopReload.stop = document.getElementById("stop-button");
-			};
-
-			for (let [, ss] of Iterator(document.styleSheets)) {
-				if (ss.href == "chrome://browser/skin/browser.css") {
-					for (let [, r] of Iterator(ss.cssRules)) {
-						if ("selectorText" in r && r.selectorText.endsWith('#urlbar')) {
-							r.style.MozBorderStart =
-								r.style.MozBorderStartColor =
-								r.style.MozBorderStartStyle =
-								r.style.MozBorderStartWidth = "";
-						}
-					}
-					break;
-				}
 			}
 		});
 	]]></script>

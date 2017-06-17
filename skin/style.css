@@ -5,13 +5,13 @@
 #stop-button {
 	-moz-context-properties: fill;
 	fill: var(--toolbarbutton-icon-fill);
+	border: none;
 	padding: 0 2px;
 	-moz-image-region: unset !important;
 }
 #reload-button {
 	list-style-image: url("chrome://browser/skin/reload.svg");
 	margin-inline-start: 0;
-	border: none;
 }
 #stop-button {
 	list-style-image: url("chrome://browser/skin/stop.svg");
